@@ -1,0 +1,7 @@
+{
+    "require": {
+        "weberhofer/jsonrpcphp": "^2.2",
+        "monolog/monolog": "1.0.*",
+        "vlucas/phpdotenv": "^3.3"
+    }
+}
