@@ -9,6 +9,8 @@ $userName = getenv('BTCNODEUSER');
 $password = getenv('BTCNODEPASS');
 
 //Run the Client
-$myJSONRPCClient = new \org\jsonrpcphp\JsonRPCClient('http://' . $userName . ':' . $password . '@127.0.0.1:8332/');;
+$bitcoin = new \org\jsonrpcphp\JsonRPCClient('http://' . $userName . ':' . $password . '@127.0.0.1:8332/');;
 
-var_dump($myJSONRPCClient);
+echo "<pre>\n";
+    print_r($bitcoin->getinfo());
+echo "</pre>";
