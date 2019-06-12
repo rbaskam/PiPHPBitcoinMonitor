@@ -170,4 +170,10 @@ Class Bitcoin
 
         return $this->response['result'];
     }
+
+    public function getDebugLogs($amount = 10)
+    {
+        $output = shell_exec('tail 10 ~/.bitcoin/debug.log');
+        return $output;
+    }
 }
