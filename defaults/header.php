@@ -16,7 +16,11 @@ require dirname(__DIR__, 1) .'/vendor/autoload.php';
 require dirname(__DIR__, 1) .'/classes/bitcoin.php';
 
 //Connect tot he RPC Client
-$bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient('http://' . $userName . ':' . $password . '@localhost:8332/');;
+$url = 'http://' . $userName . ':' . $password . '@localhost:8332/';
+$bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
+
+echo $url;
+echo "<br>";
 
 var_dump($bitcoinRPC);
 
