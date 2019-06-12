@@ -40,7 +40,7 @@ $phpFormat = new PHPFormat();
 
 //Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
-// $bitcoin->getinfo();
+$bitcoin->getblockchaininfo();
 
 
 $bitcoinRPC = '';
