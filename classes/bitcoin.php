@@ -173,6 +173,7 @@ Class Bitcoin
 
     public function getDebugLogs($amount = 10)
     {
+        echo "getting logs";
         $output = shell_exec('tail 10 ~/.bitcoin/debug.log');
         return $output;
     }
