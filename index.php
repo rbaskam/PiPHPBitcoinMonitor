@@ -119,7 +119,7 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
 
                 <div class="col-md-6">
                     <div class="card-counter danger">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-percent"></i>
                         <span class="count-numbers">
                         <?php 
                         if (isset($nodeData['verificationprogress'])) {
@@ -148,9 +148,15 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
 
                     <div class="col-md-6">
                     <div class="card-counter info">
-                        <i class="fa fa-users"></i>
-                        <span class="count-numbers">35</span>
-                        <span class="count-name">Users</span>
+                        <i class="fa fas fa-link"></i>
+                        <span class="count-numbers">
+                        <?php 
+                        if (isset($nodeData['chain'])) {
+                            echo $nodeData['chain'] ;
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">Blockchain</span>
                     </div>
                 </div>
             </div>
