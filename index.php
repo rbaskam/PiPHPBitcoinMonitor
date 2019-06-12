@@ -36,6 +36,9 @@ THE SOFTWARE.
 require_once __DIR__ . '/defaults/header.php';
 
 //Connect to the Bitcoin Data
+$phpFormat = new PHPFormat();
+
+//Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
 
 //Connect tot he RPC Client
@@ -94,7 +97,7 @@ $nodeData = $bitcoinRPC->getblockchaininfo();
                 <span class="count-numbers">
                 <?php 
                 if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
-                    $nodeData['blocks'] . '/' . $nodeData['headers'];
+                    echo $nodeData['blocks'] . '/' . $nodeData['headers'];
                 }                
                 ?>
                 </span>
@@ -105,16 +108,28 @@ $nodeData = $bitcoinRPC->getblockchaininfo();
             <div class="col-md-3">
             <div class="card-counter danger">
                 <i class="fa fa-ticket"></i>
-                <span class="count-numbers">599</span>
-                <span class="count-name">Instances</span>
+                <span class="count-numbers">
+                <?php 
+                if (isset($nodeData['verificationprogress'])) {
+                    echo $nodeData['verificationprogress'] ;
+                }                
+                ?>
+                </span>
+                <span class="count-name">Progress with Sync</span>
             </div>
             </div>
 
             <div class="col-md-3">
             <div class="card-counter success">
                 <i class="fa fa-database"></i>
-                <span class="count-numbers">6875</span>
-                <span class="count-name">Data</span>
+                <span class="count-numbers">
+                <?php 
+                if (isset($nodeData['size_on_disk'])) {
+                    echo $phpFormat->formatBytes($nodeData['size_on_disk']);
+                }                
+                ?>
+                </span>
+                <span class="count-name">Size on Disk</span>
             </div>
             </div>
 
