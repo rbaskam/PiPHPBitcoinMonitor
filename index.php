@@ -39,7 +39,7 @@ require_once __DIR__ . '/defaults/header.php';
 $bitcoin = new Bitcoin($userName, $password);
 
 //Get some information
-$nodeInfo = $bitcoinRPC->getinfo();
+$nodeInfo = $bitcoinRPC->getBlockChainInfo();
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
