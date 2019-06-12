@@ -52,8 +52,6 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
 
     //get the information about the current Node
     $nodeData = $bitcoinRPC->getblockchaininfo();
-    
-    var_dump($nodeData);
 }
 
 
