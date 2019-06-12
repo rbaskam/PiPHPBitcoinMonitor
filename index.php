@@ -39,12 +39,12 @@ require_once __DIR__ . '/defaults/header.php';
 $bitcoin = new Bitcoin($userName, $password);
 
 //Connect tot he RPC Client
-$url = 'http://' . $userName . ':' . $password . '@localhost:28332/';
+$url = 'http://' . $userName . ':' . $password . '@' . $url . ':' . $port . '/';
 $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
 
 //Get some information
 echo "<pre>\n";
-print_r($bitcoinRPC->getinfo()); echo "\n";
+print_r($bitcoinRPC->getblockchaininfo()); echo "\n";
 
 echo "</pre>";
 
