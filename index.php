@@ -60,8 +60,6 @@ if ($bitcoin->status == 200) {
 //Get the debug logs for bitcoin
 $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 
-var_dump($bitcoinLogs);
-die();
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
