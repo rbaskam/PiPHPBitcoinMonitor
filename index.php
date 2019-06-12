@@ -85,10 +85,14 @@ if ($bitcoin->status == 200) {
             <?php } else { ?>
                 <span class="text-danger">Down</span>
             <?php }
-            echo ' (' . $bitcoin->status . ')';
             ?>
             </h1>
             <?php 
+            if ($bitcoin->status) {
+            ?>
+                <p>Status: <span class="text-danger"><?php echo $bitcoin->status; ?></span></p>
+            <?php
+            } 
             if ($bitcoin->error) {
             ?>
                 <p>Message from Node: <span class="text-danger"><?php echo $bitcoin->error; ?></span></p>
