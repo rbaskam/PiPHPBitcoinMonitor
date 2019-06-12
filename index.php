@@ -45,7 +45,7 @@ $bitcoin->getinfo();
 
 $bitcoinRPC = '';
 
-if ($bitcoin->status == 200) {
+if ($bitcoin->status == 200 || $bitcoin->status == 404) {
     //Connect tot he RPC Client
     $url = 'http://' . $userName . ':' . $password . '@' . $rpcUrl . ':' . $rpcPort . '/';
     $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
