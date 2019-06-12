@@ -64,8 +64,8 @@ $nodeData = $bitcoinRPC->getblockchaininfo();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-        <link rel="stylesheet" href="resources/css/font-awesome.css" />
-        <link rel="stylesheet" href="resources/css/main.css" />
+        <link rel="stylesheet" href="/resources/css/font-awesome.css" />
+        <link rel="stylesheet" href="/resources/css/main.css" />
     </head>
     <body>
 
@@ -144,7 +144,7 @@ $nodeData = $bitcoinRPC->getblockchaininfo();
         </div>
     
         <script src="/resources/js/jquery.min.js"></script>
-        <script src="/resources/js/popper.min.js"></script>
+        <script src="/resources/js/popper.js"></script>
         <script src="/resources/js/bootstrap.min.js"></script>
     </body>
 </html>
