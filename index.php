@@ -42,12 +42,14 @@ $phpFormat = new PHPFormat();
 $bitcoin = new Bitcoin($userName, $password);
 
 //Connect tot he RPC Client
-$url = 'http://' . $userName . ':' . $password . '@' . $url . ':' . $port . '/';
+$url = 'http://' . $userName . ':' . $password . '@' . $rpcUrl . ':' . $rpcPort . '/';
 $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
 
 //get the information about the current Node
 $nodeData = $bitcoinRPC->getblockchaininfo();
 
+
+var_dump($nodeData);
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
