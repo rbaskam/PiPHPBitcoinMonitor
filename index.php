@@ -51,13 +51,10 @@ if ($bitcoin->status == 200) {
 
     //get the information about the current Node
     $nodeData = $bitcoinRPC->getblockchaininfo();
+    
+    var_dump($nodeData);
 }
 
-
-
-
-
-var_dump($nodeData);
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
