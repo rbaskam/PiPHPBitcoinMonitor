@@ -25,5 +25,5 @@ $dotenv->load();
 //Set the Bitcoin Login Details
 $userName = getenv('BTCNODEUSER');
 $password = getenv('BTCNODEPASS');
-// $rpcPort  = getenv('BTCNODEPORT');
-// $rpcUrl   = getenv('BTCNODEURL');
+$rpcPort  = getenv('BTCNODEPORT');
+$rpcUrl   = getenv('BTCNODEURL');
