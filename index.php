@@ -92,7 +92,7 @@ $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
             ?>
             </h1>
             <?php 
-            if ($bitcoin->status) {
+            if ($bitcoin->status != 200) {
             ?>
                 <p>Status: <span class="text-danger"><?php echo $bitcoin->status; ?></span></p>
             <?php
