@@ -41,7 +41,7 @@ $phpFormat = new PHPFormat();
 //Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
 $bitcoin->getinfo();
-var_dump($bitcoin->getinfo());
+var_dump($bitcoin->error);
 echo "<br>";
 echo $bitcoin->status;
 die();
