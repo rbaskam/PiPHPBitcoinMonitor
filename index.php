@@ -72,7 +72,12 @@ echo $bitcoin->status;
 
         <div class="jumbotron text-center">
             <h1>Status of your Node</h1>
-            <p></p> 
+            <?php 
+            if ($bitcoin->error) {
+                echo "<p>$bitcoin->error</p>"; 
+            } 
+            ?>
+           
         </div>
         
         <div class="container">
