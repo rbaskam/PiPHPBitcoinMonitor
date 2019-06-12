@@ -57,10 +57,8 @@ $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f
         <title>Bitcoin Node Checker</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+        
     </head>
     <body>
 
@@ -68,15 +66,15 @@ $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f
             <h1>Status of your Node: 
             <?php 
             if ($bitcoin->status == 200) { ?>
-                Up and Running
+                <span class="text-success"> Up and Running </span>
             <?php } else { ?>
-                Down
+                <span class="text-danger">Down</span>
             <?php } ?>
             </h1>
             <?php 
             if ($bitcoin->error) {
             ?>
-                <p>Message from Node: <?php echo $bitcoin->error; ?></p>
+                <p>Message from Node: <span class="text-danger"><?php echo $bitcoin->error; ?></span></p>
             <?php
             } 
             ?>
@@ -102,6 +100,9 @@ $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f
                 </div>
             </div>
         </div>
-
+    
+        <script src="/resources/js/jquery.min.js"></script>
+        <script src="/resources/js/popper.min.js"></script>
+        <script src="/resources/js/bootstrap.min.js"></script>
     </body>
 </html>
