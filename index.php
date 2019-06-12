@@ -43,7 +43,7 @@ $password = getenv('BTCNODEPASS');
 //Connect to the Class
 $bitcoin = new Bitcoin($userName, $password);
 
-s
+
 //Get some information
 $info = $bitcoin->getinfo();
 $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
