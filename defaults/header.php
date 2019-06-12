@@ -9,6 +9,9 @@ ini_set('max_execution_time', 0);
 //Require the composer packages
 require dirname(__DIR__, 1) .'/vendor/autoload.php';
 
+//Require the BTC Class
+require dirname(__DIR__, 1) .'/classes/bitcoin.php';
+
 //Get ENV data
 $dotenv = Dotenv\Dotenv::create(dirname(__DIR__, 1));
 $dotenv->load();
