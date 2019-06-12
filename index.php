@@ -68,7 +68,9 @@ $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f
             <h1>Status of your Node: <?php echo $bitcoin->status?></h1>
             <?php 
             if ($bitcoin->error) {
-                echo "<p>$bitcoin->error</p>"; 
+            ?>
+                <p><?php echo $bitcoin->error; ?></p>
+            <?php
             } 
             ?>
            
