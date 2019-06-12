@@ -40,10 +40,11 @@ $phpFormat = new PHPFormat();
 
 //Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
+echo $bitcoin->status;
 
 $bitcoinRPC = '';
 
-if ($bitcoin->status != 200) {
+if ($bitcoin->status == 200) {
     //Connect tot he RPC Client
     $url = 'http://' . $userName . ':' . $password . '@' . $rpcUrl . ':' . $rpcPort . '/';
     $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
