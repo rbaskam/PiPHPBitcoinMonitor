@@ -65,11 +65,18 @@ $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f
     <body>
 
         <div class="jumbotron text-center">
-            <h1>Status of your Node: <?php echo $bitcoin->status?></h1>
+            <h1>Status of your Node: 
+            <?php 
+            if ($bitcoin->status == 200) { ?>
+                Up and Running
+            <?php } else { ?>
+                Down
+            <?php } ?>
+            </h1>
             <?php 
             if ($bitcoin->error) {
             ?>
-                <p><?php echo $bitcoin->error; ?></p>
+                <p>Message from Node: <?php echo $bitcoin->error; ?></p>
             <?php
             } 
             ?>
