@@ -55,9 +55,9 @@ $blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd6
 
 var_dump($nodeInfo);
 echo "<br>";
-var_dump($transactionInfo);
-echo "<br>";
-var_dump($blockInfo);
+// var_dump($transactionInfo);
+// echo "<br>";
+// var_dump($blockInfo);
 echo "<br>";
 var_dump($debugLogs);
 echo "<br>";
