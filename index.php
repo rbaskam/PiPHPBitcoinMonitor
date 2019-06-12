@@ -35,23 +35,17 @@ THE SOFTWARE.
 //Get the header
 require_once __DIR__ . '/defaults/header.php';
 
-
-//Set the Bitcoin Login Details
-$userName = getenv('BTCNODEUSER');
-$password = getenv('BTCNODEPASS');
-
 //Connect to the Class
 $bitcoin = new Bitcoin($userName, $password);
 
-
 //Get some information
-$nodeInfo = $bitcoin->getinfo();
+$nodeInfo = $bitcoinRPC->getinfo();
 
 //Get last Logs from Bitcoin
-$debugLogs = $bitcoin->getDebugLogs(10);
+// $debugLogs = $bitcoin->getDebugLogs(10);
 
-$transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
-$blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f55fb');
+// $transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
+// $blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f55fb');
 
 var_dump($nodeInfo);
 echo "<br>";
@@ -59,8 +53,7 @@ echo "<br>";
 // echo "<br>";
 // var_dump($blockInfo);
 echo "<br>";
-var_dump($debugLogs);
-echo "<br>";
+
 ?>
 
 <!DOCTYPE html>
