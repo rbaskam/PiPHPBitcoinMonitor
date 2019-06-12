@@ -38,8 +38,15 @@ require_once __DIR__ . '/defaults/header.php';
 //Connect to the Class
 $bitcoin = new Bitcoin($userName, $password);
 
+//Connect tot he RPC Client
+$url = 'http://' . $userName . ':' . $password . '@localhost:8332/';
+$bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
+
 //Get some information
-$nodeInfo = $bitcoinRPC->getinfo();
+echo "<pre>\n";
+print_r($bitcoinRPC->getinfo()); echo "\n";
+
+echo "</pre>";
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);

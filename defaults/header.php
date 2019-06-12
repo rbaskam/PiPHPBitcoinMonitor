@@ -23,7 +23,3 @@ $dotenv->load();
 //Set the Bitcoin Login Details
 $userName = getenv('BTCNODEUSER');
 $password = getenv('BTCNODEPASS');
-
-//Connect tot he RPC Client
-$url = 'http://' . $userName . ':' . $password . '@localhost:8332/';
-$bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
