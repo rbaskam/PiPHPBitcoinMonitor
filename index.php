@@ -78,7 +78,7 @@ if ($bitcoin->status == 200) {
     <body>
 
         <div class="jumbotron text-center">
-            <h1>Status of your Node: 
+            <h1>Your Node is: 
             <?php 
             if ($bitcoin->status == 200) { ?>
                 <span class="text-success"> Up and Running</span>
