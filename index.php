@@ -73,10 +73,12 @@ $nodeData = $bitcoinRPC->getblockchaininfo();
             <h1>Status of your Node: 
             <?php 
             if ($bitcoin->status == 200) { ?>
-                <span class="text-success"> Up and Running </span>
+                <span class="text-success"> Up and Running</span>
             <?php } else { ?>
                 <span class="text-danger">Down</span>
-            <?php } ?>
+            <?php }
+            echo ' (' . $bitcoin->status . ')';
+            ?>
             </h1>
             <?php 
             if ($bitcoin->error) {
