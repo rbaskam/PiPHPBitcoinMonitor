@@ -142,7 +142,8 @@ Class Bitcoin
         if (!empty($curl_error)) {
             $this->error = $curl_error;
         }
-
+        var_dump($this->response['error']);
+        die();
         if ($this->response['error']) {
             // If bitcoind returned an error, put that in $this->error
             $this->error = $this->response['error']['message'];

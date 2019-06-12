@@ -39,6 +39,8 @@ sudo apt-get install php-curl
 /etc/init.d/apache2 restart
 OR
 sudo service apache2 reload
+OR
+sudo service apache2 restart
 ```
 
 Usage
