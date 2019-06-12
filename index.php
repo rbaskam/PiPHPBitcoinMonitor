@@ -35,31 +35,22 @@ THE SOFTWARE.
 //Get the header
 require_once __DIR__ . '/defaults/header.php';
 
-//Connect to the Class
+//Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
 
 //Connect tot he RPC Client
 $url = 'http://' . $userName . ':' . $password . '@' . $url . ':' . $port . '/';
 $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
 
-//Get some information
-echo "<pre>\n";
-print_r($bitcoinRPC->getblockchaininfo()); echo "\n";
+//get the information about the current Node
+$nodeData = $bitcoinRPC->getblockchaininfo();
 
-echo "</pre>";
 
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
 
 // $transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
 // $blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f55fb');
-
-var_dump($nodeInfo);
-echo "<br>";
-// var_dump($transactionInfo);
-// echo "<br>";
-// var_dump($blockInfo);
-echo "<br>";
 
 ?>
 
@@ -70,7 +61,8 @@ echo "<br>";
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-        
+        <link rel="stylesheet" href="resources/css/font-awesome.css" />
+        <link rel="stylesheet" href="resources/css/main.css" />
     </head>
     <body>
 
@@ -93,24 +85,47 @@ echo "<br>";
            
         </div>
         
+        
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                </div>
-                <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                </div>
-                <div class="col-sm-4">
-                <h3>Column 3</h3>        
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                </div>
+            <div class="col-md-3">
+            <div class="card-counter primary">
+                <i class="fa fa-code-fork"></i>
+                <span class="count-numbers">
+                <?php 
+                if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
+                    $nodeData['blocks'] . '/' . $nodeData['headers'];
+                }                
+                ?>
+                </span>
+                <span class="count-name">Synced Blocks/Headers</span>
             </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="card-counter danger">
+                <i class="fa fa-ticket"></i>
+                <span class="count-numbers">599</span>
+                <span class="count-name">Instances</span>
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="card-counter success">
+                <i class="fa fa-database"></i>
+                <span class="count-numbers">6875</span>
+                <span class="count-name">Data</span>
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="card-counter info">
+                <i class="fa fa-users"></i>
+                <span class="count-numbers">35</span>
+                <span class="count-name">Users</span>
+            </div>
+            </div>
+        </div>
         </div>
     
         <script src="/resources/js/jquery.min.js"></script>
