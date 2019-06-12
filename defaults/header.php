@@ -18,6 +18,8 @@ require dirname(__DIR__, 1) .'/classes/bitcoin.php';
 //Connect tot he RPC Client
 $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient('http://' . $userName . ':' . $password . '@localhost:8332/');;
 
+var_dump($bitcoinRPC);
+
 //Get ENV data
 $dotenv = Dotenv\Dotenv::create(dirname(__DIR__, 1));
 $dotenv->load();
