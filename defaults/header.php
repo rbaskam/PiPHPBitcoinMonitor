@@ -18,6 +18,9 @@ require dirname(__DIR__, 1) .'/classes/bitcoin.php';
 //Require the BTC Class
 require dirname(__DIR__, 1) .'/classes/format.php';
 
+//Require the BTC Class
+require dirname(__DIR__, 1) .'/classes/functions.php';
+
 //Get ENV data
 $dotenv = Dotenv\Dotenv::create(dirname(__DIR__, 1));
 $dotenv->load();

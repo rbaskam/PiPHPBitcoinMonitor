@@ -39,13 +39,16 @@ require_once __DIR__ . '/defaults/header.php';
 $phpFormat = new PHPFormat();
 
 //Connect to the Bitcoin Data
+$phpFunctions = new PHPFunctions();
+
+//Connect to the Bitcoin Data
 $bitcoin = new Bitcoin($userName, $password);
 $bitcoin->getblockchaininfo();
 
-
+//Set Default so can be used in Display
 $bitcoinRPC = '';
-
-if ($bitcoin->status == 200 || $bitcoin->status == 404) {
+//Check if the Bitcoin Node is up and run the RPC Client
+if ($bitcoin->status == 200) {
     //Connect tot he RPC Client
     $url = 'http://' . $userName . ':' . $password . '@' . $rpcUrl . ':' . $rpcPort . '/';
     $bitcoinRPC = new \org\jsonrpcphp\JsonRPCClient($url);
@@ -53,6 +56,9 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
     //get the information about the current Node
     $nodeData = $bitcoinRPC->getblockchaininfo();
 }
+
+//Get the debug logs for bitcoin
+$bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 
 
 //Get last Logs from Bitcoin
@@ -159,6 +165,30 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
                         <span class="count-name">Blockchain</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="row">
+            <h3>Bitcoin Logs</h3>
+            <p></p>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Log</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($bitcoinLogs AS $log) {
+                ?>
+                    <tr>
+                        <td><?php echo $log ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
+            
             </div>
         </div>
     
