@@ -152,7 +152,7 @@ if ($bitcoin->status == 200 || $bitcoin->status == 404) {
                         <span class="count-numbers">
                         <?php 
                         if (isset($nodeData['chain'])) {
-                            echo $nodeData['chain'] ;
+                            echo ucfirst($nodeData['chain']) ;
                         }                
                         ?>
                         </span>
