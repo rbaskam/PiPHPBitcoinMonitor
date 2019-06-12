@@ -105,56 +105,57 @@ if ($bitcoin->status == 200) {
         
         <div class="container">
             <div class="row">
-            <div class="col-md-3">
-            <div class="card-counter primary">
-                <i class="fa fa-code-fork"></i>
-                <span class="count-numbers">
-                <?php 
-                if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
-                    echo $nodeData['blocks'] . '/' . $nodeData['headers'];
-                }                
-                ?>
-                </span>
-                <span class="count-name">Synced Blocks/Headers</span>
-            </div>
-            </div>
+                <div class="col-md-6">
+                    <div class="card-counter primary">
+                        <i class="fa fa-code-fork"></i>
+                        <span class="count-numbers">
+                        <?php 
+                        if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
+                            echo $nodeData['blocks'] . '/' . $nodeData['headers'];
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">Synced Blocks/Headers</span>
+                    </div>
+                </div>
 
-            <div class="col-md-3">
-            <div class="card-counter danger">
-                <i class="fa fa-ticket"></i>
-                <span class="count-numbers">
-                <?php 
-                if (isset($nodeData['verificationprogress'])) {
-                    echo $nodeData['verificationprogress'] ;
-                }                
-                ?>
-                </span>
-                <span class="count-name">Progress with Sync</span>
+                <div class="col-md-6">
+                    <div class="card-counter danger">
+                        <i class="fa fa-ticket"></i>
+                        <span class="count-numbers">
+                        <?php 
+                        if (isset($nodeData['verificationprogress'])) {
+                            echo $nodeData['verificationprogress'] ;
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">Progress with Sync</span>
+                    </div>
+                </div>
             </div>
-            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-counter success">
+                        <i class="fa fa-database"></i>
+                        <span class="count-numbers">
+                        <?php 
+                        if (isset($nodeData['size_on_disk'])) {
+                            echo $phpFormat->formatBytes($nodeData['size_on_disk']);
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">Size on Disk</span>
+                    </div>
+                    </div>
 
-            <div class="col-md-3">
-            <div class="card-counter success">
-                <i class="fa fa-database"></i>
-                <span class="count-numbers">
-                <?php 
-                if (isset($nodeData['size_on_disk'])) {
-                    echo $phpFormat->formatBytes($nodeData['size_on_disk']);
-                }                
-                ?>
-                </span>
-                <span class="count-name">Size on Disk</span>
+                    <div class="col-md-6">
+                    <div class="card-counter info">
+                        <i class="fa fa-users"></i>
+                        <span class="count-numbers">35</span>
+                        <span class="count-name">Users</span>
+                    </div>
+                </div>
             </div>
-            </div>
-
-            <div class="col-md-3">
-            <div class="card-counter info">
-                <i class="fa fa-users"></i>
-                <span class="count-numbers">35</span>
-                <span class="count-name">Users</span>
-            </div>
-            </div>
-        </div>
         </div>
     
         <script src="/resources/js/jquery.min.js"></script>
