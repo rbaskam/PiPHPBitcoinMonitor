@@ -64,6 +64,15 @@ $walletInfo = $bitcoinRPC->getwalletinfo();
 $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 
 
+//Get information about addresses
+$labelsAvailable = $bitcoinRPC->listlabels();
+
+echo count($labelsAvailable);
+die();
+if (count($labelsAvailable) == 0) {
+
+}
+
 //Get Actions if applicable
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
