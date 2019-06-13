@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,6 +23,20 @@
                 </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="/index.php?action=createAddress">Create Address</a>
+                </li>
+                <li class="nav-item">
+                <?php 
+                if (isset($autoRefresh)) {
+                ?>
+                    <a class="nav-link" href="/index.php">Switch Refresh Off</a>
+                <?php
+                } else {
+                ?>
+                    <a class="nav-link" href="/index.php?action=autoPageRefresh&every=10">Switch Refresh On</a>
+                <?php   
+                }
+                ?>
+                    
                 </li>
             </ul>
         </nav>

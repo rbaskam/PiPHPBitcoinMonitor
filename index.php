@@ -89,16 +89,29 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
     if ($action == 'shutdownBitcoin') {
+        //Stop the botcoin server
         $message = $bitcoin->stop();
         $bitcoin->getblockchaininfo();
     } else if ($action == 'startBitcoin') {
+        //Start the bitcoin server
         $message = $phpFunctions->startBitcoin();
     } else if ($action == 'shutdownPi') {
+        //Shut down the Pi
         $message = $phpFunctions->shutDownPi($bitcoin->status);
     } else if ($action == 'createAddress') {
+        //Create a new recieveing address
         $bitcoinRPC->getnewaddress();
         //Get the wallet Recieve address
         $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
+    } else if ($action == 'autoPageRefresh') {
+        //Use to auto refresh page
+        $timeToWait = $_GET['every'];
+        //Use this to turn it off
+        $autoRefresh = true;
+
+        //Page to refresh
+        $page = $_SERVER['PHP_SELF'];
+        header("Refresh: $timeToWait; url=$page");
     }
 }
 
