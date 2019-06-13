@@ -181,8 +181,8 @@
                             <td><?php echo $walletInfo['txcount'] ?></td>
                         </tr>
                         <?php
-                        foreach ($walletAddressAndType AS $address => $type) {
-                            if ($type != 'recieve') {
+                        foreach ($walletAddressAndType AS $address) {
+                            if ($address['purpose'] != 'recieve') {
                                 continue;
                             }
                         ?>
