@@ -26,6 +26,10 @@ sudo rm /var/www/html/index.html
 echo "<?php phpinfo ();?>" > /var/www/html/index.php
 
 //On another PC go to your IP address and you should have the PHP Info Page
+
+cd /var/www
+rm -rf html
+git clone [INSERT CLONE HERE] html
 ```
 
 Go to your php.ini file and remove the ; mark from the beginning of the following line:
