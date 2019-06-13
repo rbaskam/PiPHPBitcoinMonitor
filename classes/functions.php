@@ -49,7 +49,7 @@ Class PHPFunctions
 
     public function shutDownBitcoin()
     {
-        return shell_exec('bitcoin-cli stop');
+        return shell_exec('sudo bitcoin-cli stop');
     }
 
     public function shutDownPi($status)
