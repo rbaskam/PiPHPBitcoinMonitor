@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card-counter success">
                         <i class="fa fa-database"></i>
                         <span class="count-numbers">
@@ -116,7 +116,21 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <div class="card-counter success">
+                        <i class="fa fa-pound"></i>
+                        <span class="count-numbers">
+                        <?php 
+                        if (isset($bitcoinRPC)) {
+                            echo $bitcoinRPC->getbalance();
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">BTC Balance</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
                     <div class="card-counter info">
                         <i class="fa fas fa-link"></i>
                         <span class="count-numbers">
