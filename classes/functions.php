@@ -63,7 +63,7 @@ Class PHPFunctions
 
     public function testExecFunctions()
     {
-        $output = shell_exec('ls'); 
+        $output = exec('ls'); 
   
         // Display the list of all file 
         // and directory 
