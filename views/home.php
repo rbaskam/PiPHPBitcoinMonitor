@@ -118,7 +118,7 @@
 
                 <div class="col-md-4">
                     <div class="card-counter success">
-                        <i class="fa fa-pound"></i>
+                        <i class="fa fa-btc"></i>
                         <span class="count-numbers">
                         <?php 
                         if (isset($bitcoinRPC)) {
