@@ -60,5 +60,14 @@ Class PHPFunctions
 
         return exec('sudo shutdown -h');
     }
+
+    public function testExecFunctions()
+    {
+        $output = shell_exec('ls'); 
+  
+        // Display the list of all file 
+        // and directory 
+        echo "<pre>$output</pre>"; 
+    }
        
 }

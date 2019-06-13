@@ -68,7 +68,9 @@ if (isset($_GET['action'])) {
     if ($action == 'shutdownBitcoin') {
         $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
     } else if ($action == 'shutdownPi') {
-        $phpFunctions->shutDownPi();
+        $message = $phpFunctions->shutDownPi();
+    } else if ($action == 'testAction') {
+        $message = $phpFunctions->testExecFunctions();
     }
 }
 
