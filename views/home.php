@@ -182,7 +182,7 @@
                         </tr>
                         <?php
                         foreach ($walletAddressAndType AS $address) {
-                            if ($address['purpose'] != 'recieve') {
+                            if ($address['purpose'] != 'receive') {
                                 continue;
                             }
                         ?>

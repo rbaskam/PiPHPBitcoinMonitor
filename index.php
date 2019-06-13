@@ -86,11 +86,6 @@ if ($walletLabel == '') {
 //Get the wallet Recieve address
 $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
 
-foreach ($walletAddressAndType AS $address) {
-    var_dump($address);
-}
-
-
 //Get Actions if applicable
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
