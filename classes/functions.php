@@ -32,18 +32,22 @@ Class PHPFunctions
 
         //Get from ENV File
         $logFilePath   = getenv('BTCLOGFILE');
-
-        //Assign File
-        $file = file($logFilePath);
-
         //Return Array
         $debugLog = array();
 
-        //Loop through file lines
-        for ($i = max(0, count($file)-$lengthOfLog); $i < count($file); $i++) {
-            array_push($debugLog, $file[$i]);
-        }
+        //Check file exisits
+        if (file_exists($logFilePath)) {
 
+            //Assign File
+            $file = file($logFilePath);            
+
+            //Loop through file lines
+            for ($i = max(0, count($file)-$lengthOfLog); $i < count($file); $i++) {
+                array_push($debugLog, $file[$i]);
+            }
+        } else {
+            array_push($debugLog, 'No File Exists in this location!');
+        }
         return $debugLog;
     } 
 
