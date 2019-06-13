@@ -124,7 +124,7 @@
                         <i class="fa fa-btc"></i>
                         <span class="count-numbers">
                         <?php 
-                        if (isset($bitcoinRPC)) {
+                        if ($bitcoinRPC) {
                             echo $bitcoinRPC->getbalance();
                         }                
                         ?>
