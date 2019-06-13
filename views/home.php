@@ -41,12 +41,16 @@
             <?php 
             if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
                 ?>
-                    <h2>Your Node is:</h2> 
+                    <h2>Your Node is:
                 <?php
                 if ($nodeData['blocks'] == $nodeData['headers']) {
-                    echo "<h2 class='text-success'> Synced</h2>";
+                ?>
+                   <span class="text-success"> Synced</span></h2>
+                <?php
                 } else {
-                    echo "<h2 class='text-danger'> Not Synced (" . (intval($nodeData['headers']) - intval($nodeData['blocks'])) . " behind)</h2>";
+                ?>
+                    <span class="text-danger"> Not Synced ( <?php intval($nodeData['headers']) - intval($nodeData['blocks']) ?> behind)</span></h2>
+                <?php
                 }
                 
             }                
