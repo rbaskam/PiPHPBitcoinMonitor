@@ -67,11 +67,24 @@ $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 //Get information about addresses
 $labelsAvailable = $bitcoinRPC->listlabels();
 
-echo count($labelsAvailable);
-die();
+//Check if we have some labels (only way I can think of for now)
 if (count($labelsAvailable) == 0) {
-
+    //Create a new address and label
+    $bitcoinRPC->getnewaddress();
 }
+
+//Now we have a label we can get a receieveing address
+$labelsAvailable = $bitcoinRPC->listlabels();
+var_dump($labelsAvailable);
+die();
+//Get the label if set
+$walletLabel = getenv('BTCWALLETLABEL');
+if ($walletLabel == '') {
+    $walletLabel = $labelsAvailable[0]
+}
+
+
+
 
 //Get Actions if applicable
 if (isset($_GET['action'])) {
