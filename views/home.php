@@ -112,7 +112,7 @@
         <hr>
         <div class="container">
             <div class="row">
-                <h3>Bitcoin Logs</h3>
+                <h3>Bitcoin Logs</h3><br>
                 <p>Here are the latest <?php echo  getenv('BTCLOGLENGTH') ?> log entries from <?php echo dirname(__DIR__, 4) . getenv('BTCLOGFILE')?>.</p>
                 <table class="table table-striped">
                     <thead>

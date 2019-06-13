@@ -33,7 +33,7 @@ Class PHPFunctions
         $lengthOfLog = getenv('BTCLOGLENGTH');
 
         //Get from ENV File
-        $logFilePath   = dirname(__DIR__, 4) . getenv('BTCLOGFILE');
+        $logFilePath   = getenv('BTCLOGFILE');
 
         //Assign File
         $file = file($logFilePath);
