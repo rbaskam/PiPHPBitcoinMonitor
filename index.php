@@ -72,17 +72,11 @@ if (isset($_GET['action'])) {
     }
 }
 
-
-
-//Get last Logs from Bitcoin
-// $debugLogs = $bitcoin->getDebugLogs(10);
-
 // $transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
 // $blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f55fb');
 
 
 //Get the main view
-//Get the header
 require_once __DIR__ . '/views/home.php';
 
 ?>

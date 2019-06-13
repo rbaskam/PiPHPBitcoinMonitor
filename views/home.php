@@ -129,7 +129,7 @@
                         <span class="count-name">BTC Balance<br>
                         <?php
                         if (isset($bitcoinRPC)) {
-                            echo $bitcoinRPC->getaccountaddress();
+                            var_dump($bitcoinRPC->getaccountaddress());
                         } 
                         ?>
                         </span>
