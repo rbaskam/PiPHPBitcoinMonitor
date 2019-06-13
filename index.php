@@ -45,19 +45,6 @@ $phpFunctions = new PHPFunctions();
 $bitcoin = new Bitcoin($userName, $password);
 $bitcoin->getblockchaininfo();
 
-//Get Actions if applicable
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
-
-    if ($action == 'shutdownBitcoin') {
-        $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
-    } else if ($action == 'shutdownPi') {
-        $message = $phpFunctions->shutDownPi();
-    } else if ($action == 'createAddress') {
-        $bitcoinRPC->getnewaddress();
-    }
-}
-
 //Set Default so can be used in Display
 $bitcoinRPC = '';
 //Check if the Bitcoin Node is up and run the RPC Client
@@ -96,6 +83,21 @@ if ($bitcoin->status == 200) {
 
     //Get the wallet Recieve address
     $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
+}
+
+//Get Actions if applicable
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+
+    if ($action == 'shutdownBitcoin') {
+        $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
+    } else if ($action == 'shutdownPi') {
+        $message = $phpFunctions->shutDownPi();
+    } else if ($action == 'createAddress') {
+        $bitcoinRPC->getnewaddress();
+        //Get the wallet Recieve address
+        $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
+    }
 }
 
 // $transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
