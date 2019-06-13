@@ -113,7 +113,6 @@
         <div class="container">
             <div class="row">
                 <h2>Bitcoin Logs</h2>
-                <div class="clearfix"></div>
                 <p>Here are the latest <?php echo getenv('BTCLOGLENGTH') ?> log entries from <?php echo getenv('BTCLOGFILE')?>.</p>
                 <table class="table table-striped">
                     <thead>
