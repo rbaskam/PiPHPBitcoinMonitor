@@ -57,9 +57,9 @@ if ($bitcoin->status == 200) {
     $nodeData = $bitcoinRPC->getblockchaininfo();
 }
 
-$walletInfo = $bitcoinRPC->listwallets();
-var_dump($walletInfo);
-die();
+//Get information about loaded wallet
+$walletInfo = $bitcoinRPC->getwalletinfo();
+
 //Get the debug logs for bitcoin
 $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 

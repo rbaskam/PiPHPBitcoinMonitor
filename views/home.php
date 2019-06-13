@@ -126,13 +126,7 @@
                         }                
                         ?>
                         </span>
-                        <span class="count-name">BTC Balance<br>
-                        <?php
-                        if (isset($bitcoinRPC)) {
-                            // $walletInfo = $bitcoinRPC->listwallets();
-                            // echo $walletInfo['']
-                        } 
-                        ?>
+                        <span class="count-name">BTC Balance<br>                       
                         </span>
                     </div>
                 </div>
@@ -150,6 +144,57 @@
                         <span class="count-name">Blockchain</span>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="container">
+            <div class="row">
+                <h2>BTC Wallet</h2><br>
+                <p>Here is some information about your BTC Wallet.</p>
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Header</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody> 
+                        <?php 
+                        if ($walletInfo) {
+                        ?>                  
+                        <tr>                        
+                            <td>Wallet Name</td>
+                            <td><?php echo $walletInfo['walletname'] ?></td>
+                        </tr>
+                        <tr>                        
+                            <td>Balance</td>
+                            <td><?php echo $walletInfo['balance'] ?></td>
+                        </tr>
+                        <tr>                        
+                            <td>Unconfirmed Balance</td>
+                            <td><?php echo $walletInfo['unconfirmed_balance'] ?></td>
+                        </tr>
+                        <tr>                        
+                            <td>Transactions</td>
+                            <td><?php echo $walletInfo['txcount'] ?></td>
+                        </tr>
+
+                        <?php 
+                        } else {
+                        ?> 
+                        <tr>                        
+                            <td>Wallet Not Found</td>
+                            <td>-</td>
+                        </tr>
+
+                        <?php 
+                        }
+                        ?> 
+
+                    </tbody>
+                </table>            
             </div>
         </div>
         <hr>
