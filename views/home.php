@@ -217,29 +217,27 @@
         </div>
         <hr>
         <div class="container">
-            <div class="row">
-                <h2>Bitcoin Logs</h2><br>
-                <p>Here are the latest <?php echo getenv('BTCLOGLENGTH') ?> log entries from <?php echo getenv('BTCLOGFILE')?>.</p>
-                
-                <table class="table table-striped">
-                    <thead>
+            <h2>Bitcoin Logs</h2><br>
+            <p>Here are the latest <?php echo getenv('BTCLOGLENGTH') ?> log entries from <?php echo getenv('BTCLOGFILE')?>.</p>
+            
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Log</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                foreach ($bitcoinLogs AS $log) {
+                ?>
                     <tr>
-                        <th>Log</th>
+                        <td><?php echo $log ?></td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    foreach ($bitcoinLogs AS $log) {
-                    ?>
-                        <tr>
-                            <td><?php echo $log ?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>            
-            </div>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>  
         </div>
     
         <script src="/resources/js/jquery.min.js"></script>
