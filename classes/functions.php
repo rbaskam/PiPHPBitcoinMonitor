@@ -49,7 +49,7 @@ Class PHPFunctions
 
     public function shutDownBitcoin()
     {
-        return exec('bitcoin-cli stop');
+        return shell_exec('bitcoin-cli stop');
     }
 
     public function shutDownPi($status)
@@ -58,16 +58,7 @@ Class PHPFunctions
             return 'You must shut down Bitcoin first to avoid HDD corruption';
         }
 
-        return exec('sudo shutdown -h');
-    }
-
-    public function testExecFunctions()
-    {
-        $output = exec('ls'); 
-  
-        // Display the list of all file 
-        // and directory 
-        echo "<pre>$output</pre>"; 
+        return shell_exec('sudo shutdown -h');
     }
        
 }
