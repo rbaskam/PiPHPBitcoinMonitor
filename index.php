@@ -80,7 +80,7 @@ die();
 //Get the label if set
 $walletLabel = getenv('BTCWALLETLABEL');
 if ($walletLabel == '') {
-    $walletLabel = $labelsAvailable[0]
+    $walletLabel = $labelsAvailable[0];
 }
 
 
