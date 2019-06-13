@@ -129,7 +129,8 @@
                         <span class="count-name">BTC Balance<br>
                         <?php
                         if (isset($bitcoinRPC)) {
-                            var_dump($bitcoinRPC->getaddressinfo('1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc'));
+                            // $walletInfo = $bitcoinRPC->listwallets();
+                            // echo $walletInfo['']
                         } 
                         ?>
                         </span>
