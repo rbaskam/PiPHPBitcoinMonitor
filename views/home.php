@@ -44,9 +44,9 @@
                     <h2>Your Node is:</h2> 
                 <?php
                 if ($nodeData['blocks'] == $nodeData['headers']) {
-                    echo '<h2 class="text-success"> Synced</h2>';
+                    echo "<h2 class='text-success'> Synced</h2>";
                 } else {
-                    echo '<h2 class="text-danger"> Not Synced (' . $nodeData['headers'] - $nodeData['blocks'] . ' behind)</h2>';
+                    echo "<h2 class='text-danger'> Not Synced (" . (intval($nodeData['headers']) - intval($nodeData['blocks'])) . " behind)</h2>";
                 }
                 
             }                
