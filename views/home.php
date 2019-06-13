@@ -49,7 +49,7 @@
                 <?php
                 } else {
                 ?>
-                    <span class="text-danger"> Not Synced ( <?php intval($nodeData['headers']) - intval($nodeData['blocks']) ?> behind)</span></h2>
+                    <span class="text-danger"> Not Synced ( <?php (intval($nodeData['headers']) - intval($nodeData['blocks'])) ?> behind)</span></h2>
                 <?php
                 }
                 
