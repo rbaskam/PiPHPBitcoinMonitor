@@ -92,9 +92,9 @@
                         </span>
                         <span class="count-name">Size on Disk</span>
                     </div>
-                    </div>
+                </div>
 
-                    <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="card-counter info">
                         <i class="fa fas fa-link"></i>
                         <span class="count-numbers">
@@ -112,10 +112,9 @@
         <hr>
         <div class="container">
             <div class="row">
-                <h2>Bitcoin Logs</h2>
+                <h2>Bitcoin Logs</h2><br>
                 <p>Here are the latest <?php echo getenv('BTCLOGLENGTH') ?> log entries from <?php echo getenv('BTCLOGFILE')?>.</p>
-                <h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p> 
+                
                 <table class="table table-striped">
                     <thead>
                     <tr>
