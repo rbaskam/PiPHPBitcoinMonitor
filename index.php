@@ -82,7 +82,7 @@ if ($walletLabel == '') {
     $walletLabel = $labelsAvailable[0];
 }
 
-echo $walletLabel;
+print_r($walletLabel);
 die();
 
 //Get the wallet Recieve address
