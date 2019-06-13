@@ -90,7 +90,8 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
     if ($action == 'shutdownBitcoin') {
-        $message = $bitcoinRPC->stop();
+        $message = $bitcoin->stop();
+        $bitcoin->getblockchaininfo();
     } else if ($action == 'shutdownPi') {
         $message = $phpFunctions->shutDownPi($bitcoin->status);
     } else if ($action == 'createAddress') {
