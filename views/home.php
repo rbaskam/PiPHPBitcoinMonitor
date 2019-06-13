@@ -10,7 +10,20 @@
         <link rel="stylesheet" href="/resources/css/main.css" />
     </head>
     <body>
-
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="/"><img src="/resources/img/logo.png" alt="logo"></a>
+            
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.php?action=shutdownBitcoin">Shutdown Bitcoin Node</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.php?action=shutdownPi">Shut Down Pi</a>
+                </li>
+            </ul>
+        </nav>
         <div class="jumbotron text-center">
             <h1>Your Node is: 
             <?php 
@@ -44,7 +57,16 @@
                 <p>Message from Node: <span class="text-danger"><?php echo $bitcoin->error; ?></span></p>
             <?php
             } 
+
+
+            if (isset($message)) {
             ?>
+                <p>Message from Last Action: <span class="text-warning"><?php echo $message; ?></span></p>
+            <?php
+            } 
+            ?>
+
+
            
         </div>
         

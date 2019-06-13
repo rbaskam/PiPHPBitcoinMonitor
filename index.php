@@ -61,6 +61,19 @@ if ($bitcoin->status == 200) {
 $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 
 
+//Get Actions if applicable
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+
+    if ($action == 'shutdownBitcoin') {
+        $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
+    } else if ($action == 'shutdownPi') {
+        $phpFunctions->shutDownPi();
+    }
+}
+
+
+
 //Get last Logs from Bitcoin
 // $debugLogs = $bitcoin->getDebugLogs(10);
 

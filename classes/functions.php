@@ -23,9 +23,7 @@ Class PHPFunctions
     public function __construct()
     {
 
-    }
-
-    
+    }    
 
     public function getBitcoinDebugLog() 
     { 
@@ -48,5 +46,19 @@ Class PHPFunctions
 
         return $debugLog;
     } 
+
+    public function shutDownBitcoin()
+    {
+        return exec('bitcoin-cli stop');
+    }
+
+    public function shutDownPi($status)
+    {
+        if ($status == 200) {
+            return 'You must shut down Bitcoin first to avoid HDD corruption';
+        }
+
+        return exec('sudo shutdown -h');
+    }
        
 }
