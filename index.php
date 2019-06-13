@@ -59,10 +59,6 @@ if ($bitcoin->status == 200) {
     //Get information about loaded wallet
     $walletInfo = $bitcoinRPC->getwalletinfo();
 
-    //Get the debug logs for bitcoin
-    $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
-
-
     //Get information about addresses
     $labelsAvailable = $bitcoinRPC->listlabels();
 
@@ -84,6 +80,9 @@ if ($bitcoin->status == 200) {
     //Get the wallet Recieve address
     $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
 }
+
+//Get the debug logs for bitcoin
+$bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
 
 //Get Actions if applicable
 if (isset($_GET['action'])) {
