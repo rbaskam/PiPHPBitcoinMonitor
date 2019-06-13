@@ -53,7 +53,10 @@ nano .env
 //Put your username and password from your bitcoin.conf file saved on the node.
 ```
 
+Donations
+-----
 If this has helped feel free to donate
+
 BTC: 3HrdXMjhFVGvc93kTs6vujRmztRBZtkrA9
 
 ETH: 0x12Fa142034B348DDB8563A65AdB732efB23e6710 or ENS rbaskam.etherbase.eth
