@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/index.php?action=shutdownPi">Shut Down Pi</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.php?action=createAddress">Create Address</a>
+                </li>
             </ul>
         </nav>
         <div class="jumbotron text-center">

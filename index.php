@@ -93,6 +93,8 @@ if (isset($_GET['action'])) {
         $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
     } else if ($action == 'shutdownPi') {
         $message = $phpFunctions->shutDownPi();
+    } else if ($action == 'createAddress') {
+        $bitcoinRPC->getnewaddress();
     }
 }
 
