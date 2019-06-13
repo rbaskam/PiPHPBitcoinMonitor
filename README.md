@@ -26,6 +26,10 @@ sudo rm /var/www/html/index.html
 echo "<?php phpinfo ();?>" > /var/www/html/index.php
 
 //On another PC go to your IP address and you should have the PHP Info Page
+
+cd /var/www
+rm -rf html
+git clone [INSERT CLONE HERE] html
 ```
 
 Go to your php.ini file and remove the ; mark from the beginning of the following line:
@@ -53,4 +57,10 @@ nano .env
 //Put your username and password from your bitcoin.conf file saved on the node.
 ```
 
+Donations
+-----
+If this has helped feel free to donate
 
+BTC: 3HrdXMjhFVGvc93kTs6vujRmztRBZtkrA9
+
+ETH: 0x12Fa142034B348DDB8563A65AdB732efB23e6710 or ENS rbaskam.etherbase.eth
