@@ -156,66 +156,64 @@
         
         <hr>
         <div class="container">
-            <div class="row">
-                <h2>BTC Wallet</h2><br>
-                <p>Here is some information about your BTC Wallet.</p>
-                
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Header</th>
-                        <th>Value</th>
+            <h2>BTC Wallet</h2><br>
+            <p>Here is some information about your BTC Wallet.</p>
+            
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Header</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tbody> 
+                    <?php 
+                    if (isset($walletInfo)) {
+                    ?>                  
+                    <tr>                        
+                        <td>Wallet Name</td>
+                        <td><?php echo $walletInfo['walletname'] ?></td>
                     </tr>
-                    </thead>
-                    <tbody> 
-                        <?php 
-                        if (isset($walletInfo)) {
-                        ?>                  
-                        <tr>                        
-                            <td>Wallet Name</td>
-                            <td><?php echo $walletInfo['walletname'] ?></td>
-                        </tr>
-                        <tr>                        
-                            <td>Balance</td>
-                            <td><?php echo $walletInfo['balance'] ?></td>
-                        </tr>
-                        <tr>                        
-                            <td>Unconfirmed Balance</td>
-                            <td><?php echo $walletInfo['unconfirmed_balance'] ?></td>
-                        </tr>
-                        <tr>                        
-                            <td>Transactions</td>
-                            <td><?php echo $walletInfo['txcount'] ?></td>
-                        </tr>
-                        <?php
-                        foreach ($walletAddressAndType AS $address => $data) {
-                            if ($data['purpose'] != 'receive') {
-                                continue;
-                            }
-                        ?>
-                            <tr>
-                                <td>Receive Address</td>
-                                <td><?php echo $address ?></td>
-                            </tr>
-                        <?php
+                    <tr>                        
+                        <td>Balance</td>
+                        <td><?php echo $walletInfo['balance'] ?></td>
+                    </tr>
+                    <tr>                        
+                        <td>Unconfirmed Balance</td>
+                        <td><?php echo $walletInfo['unconfirmed_balance'] ?></td>
+                    </tr>
+                    <tr>                        
+                        <td>Transactions</td>
+                        <td><?php echo $walletInfo['txcount'] ?></td>
+                    </tr>
+                    <?php
+                    foreach ($walletAddressAndType AS $address => $data) {
+                        if ($data['purpose'] != 'receive') {
+                            continue;
                         }
-                        ?>
-
-                        <?php 
-                        } else {
-                        ?> 
-                        <tr>                        
-                            <td>Wallet Not Found</td>
-                            <td>-</td>
+                    ?>
+                        <tr>
+                            <td>Receive Address</td>
+                            <td><?php echo $address ?></td>
                         </tr>
+                    <?php
+                    }
+                    ?>
 
-                        <?php 
-                        }
-                        ?> 
+                    <?php 
+                    } else {
+                    ?> 
+                    <tr>                        
+                        <td>Wallet Not Found</td>
+                        <td>-</td>
+                    </tr>
 
-                    </tbody>
-                </table>            
-            </div>
+                    <?php 
+                    }
+                    ?> 
+
+                </tbody>
+            </table>     
         </div>
         <hr>
         <div class="container">
