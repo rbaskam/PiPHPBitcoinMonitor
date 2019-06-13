@@ -3,6 +3,8 @@ A very lightweight Bitcoin Node Monitor
 
 Monitor your Bitcoin node from a webpage on Pi, allowing you to set up a web server on your Pi and access all the information about your Lightning/Bitcoin node in one place. Can be accessed by all devices on your network.
 
+If you need a guide how to set up your Bitcoin Node and LND then I have a guide [here](https://robert-askam.co.uk/posts/post/set-up-and-running-a-bitcoin-lightning-full-node-on-raspberry-pi "Robert Askam")
+
 
 Installation
 ---------------
