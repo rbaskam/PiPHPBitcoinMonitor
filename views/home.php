@@ -2,44 +2,14 @@
 <html lang="en">
     <head>
         <title>Bitcoin Node Checker</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/resources/css/font-awesome.css" />
-        <link rel="stylesheet" href="/resources/css/main.css" />
-    </head>
+        <?php
+            require dirname(__DIR__, 1) . "/views/defaults/headTagContents.php";
+        ?>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="/"><img src="/resources/img/logo.png" alt="logo"></a>
-            
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="/index.php?action=startBitcoin">Start Bitcoin Node</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.php?action=shutdownBitcoin">Shutdown Bitcoin Node</a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.php?action=createAddress">Create Address</a>
-                </li>
-                <li class="nav-item">
-                <?php 
-                if (isset($autoRefresh)) {
-                ?>
-                    <a class="nav-link" href="/index.php">Switch Refresh Off</a>
-                <?php
-                } else {
-                ?>
-                    <a class="nav-link" href="/index.php?action=autoPageRefresh&every=10">Switch Refresh On</a>
-                <?php   
-                }
-                ?>
-                    
-                </li>
-            </ul>
-        </nav>
+        <?php
+            require dirname(__DIR__, 1) . "/views/defaults/navigation.php";
+        ?>
+        
         <div class="jumbotron text-center">
             <h1>Your Node is: 
             <?php 
@@ -252,7 +222,10 @@
                 </tbody>
             </table>  
         </div>
-    
+        
+        <?php
+            require dirname(__DIR__, 1) . "/views/defaults/footer.php";
+        ?>
         <script src="/resources/js/jquery.min.js"></script>
         <script src="/resources/js/popper.js"></script>
         <script src="/resources/js/bootstrap.min.js"></script>

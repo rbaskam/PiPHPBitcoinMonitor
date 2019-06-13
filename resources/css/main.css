@@ -1,3 +1,6 @@
+body {
+    margin-bottom: 70px;
+}
 .card-counter{
     box-shadow: 2px 2px 10px #DADADA;
     margin: 5px;
@@ -61,3 +64,16 @@
     display: block;
     font-size: 18px;
   }
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40!important;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
