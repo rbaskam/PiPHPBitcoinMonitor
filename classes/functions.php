@@ -52,6 +52,11 @@ Class PHPFunctions
         return shell_exec('sudo bitcoin-cli stop');
     }
 
+    public function startBitcoin()
+    {
+        return shell_exec('/home/pi/bitcoin/src/bitcoind -daemon');
+    }
+
     public function shutDownPi($status)
     {
         if ($status == 200) {

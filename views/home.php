@@ -16,11 +16,11 @@
             
             <!-- Links -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/index.php?action=shutdownBitcoin">Shutdown Bitcoin Node</a>
+            <li class="nav-item">
+                    <a class="nav-link" href="/index.php?action=startBitcoin">Start Bitcoin Node</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/index.php?action=shutdownPi">Shut Down Pi</a>
+                    <a class="nav-link" href="/index.php?action=shutdownBitcoin">Shutdown Bitcoin Node</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/index.php?action=createAddress">Create Address</a>
