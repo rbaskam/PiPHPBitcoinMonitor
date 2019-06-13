@@ -108,29 +108,30 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <hr>
+        <div class="container">
             <div class="row">
-            <h3>Bitcoin Logs</h3>
-            <p></p>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Log</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                foreach ($bitcoinLogs AS $log) {
-                ?>
+                <h3>Bitcoin Logs</h3>
+                <p>Here are the latest <?php echo  getenv('BTCLOGLENGTH') ?> log entries from <?php echo dirname(__DIR__, 4) . getenv('BTCLOGFILE')?>.</p>
+                <table class="table table-striped">
+                    <thead>
                     <tr>
-                        <td><?php echo $log ?></td>
+                        <th>Log</th>
                     </tr>
-                <?php
-                }
-                ?>
-                </tbody>
-            </table>
-            
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($bitcoinLogs AS $log) {
+                    ?>
+                        <tr>
+                            <td><?php echo $log ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>            
             </div>
         </div>
     
