@@ -75,16 +75,15 @@ if (count($labelsAvailable) == 0) {
 
 //Now we have a label we can get a receieveing address
 $labelsAvailable = $bitcoinRPC->listlabels();
-var_dump($labelsAvailable);
-die();
+
 //Get the label if set
 $walletLabel = getenv('BTCWALLETLABEL');
 if ($walletLabel == '') {
     $walletLabel = $labelsAvailable[0];
 }
 
-
-
+//Get the wallet Recieve address
+$walletAddressAndType = $bitcoinRPC->getaddressbylabel($walletLabel);
 
 //Get Actions if applicable
 if (isset($_GET['action'])) {

@@ -180,6 +180,19 @@
                             <td>Transactions</td>
                             <td><?php echo $walletInfo['txcount'] ?></td>
                         </tr>
+                        <?php
+                        foreach ($walletAddressAndType AS $address => $type) {
+                            if ($type != 'recieve') {
+                                continue;
+                            }
+                        ?>
+                            <tr>
+                                <td>Receive Address</td>
+                                <td><?php echo $address ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
 
                         <?php 
                         } else {
