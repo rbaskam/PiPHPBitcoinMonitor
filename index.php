@@ -41,7 +41,7 @@ $phpFormat = new PHPFormat();
 //Connect to the Bitcoin Data
 $phpFunctions = new PHPFunctions();
 
-//Connect to the Bitcoin Data
+//Connect to the Bitcoin Data using this as well as RPC breaks when starting
 $bitcoin = new Bitcoin($userName, $password);
 $bitcoin->getblockchaininfo();
 
