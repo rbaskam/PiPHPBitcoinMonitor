@@ -114,6 +114,8 @@
             <div class="row">
                 <h2>Bitcoin Logs</h2>
                 <p>Here are the latest <?php echo getenv('BTCLOGLENGTH') ?> log entries from <?php echo getenv('BTCLOGFILE')?>.</p>
+                <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p> 
                 <table class="table table-striped">
                     <thead>
                     <tr>
