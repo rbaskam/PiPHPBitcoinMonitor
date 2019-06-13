@@ -105,7 +105,12 @@ if (isset($_GET['action'])) {
 // $transactionInfo = $bitcoin->getrawtransaction('e87f138c9ebf5986151667719825c28458a28cc66f69fed4f1032a93b399fdf8', 1);
 // $blockInfo = $bitcoin->getblock('00000000000000000018a65ff0bbbc2a93493c693d05dd65c6a8dcbb881f55fb');
 
-
+//If status is 500 as in we are loading
+if ($bitcoin->status == 500) {
+    $page = $_SERVER['PHP_SELF'];
+    $sec = "5";
+    header("Refresh: $sec; url=$page");
+}
 //Get the main view
 require_once __DIR__ . '/views/home.php';
 
