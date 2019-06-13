@@ -165,7 +165,7 @@
                     </thead>
                     <tbody> 
                         <?php 
-                        if ($walletInfo) {
+                        if (isset($walletInfo)) {
                         ?>                  
                         <tr>                        
                             <td>Wallet Name</td>
