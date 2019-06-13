@@ -37,18 +37,21 @@
             <?php }
             ?>
             </h1>
-            <h2>Your Node is: 
+           
             <?php 
             if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
+                ?>
+                    <h2>Your Node is: 
+                <?php
                 if ($nodeData['blocks'] == $nodeData['headers']) {
-                    echo '<span class="text-success"> Synced</span>';
+                    echo '<span class="text-success"> Synced</span></h2>';
                 } else {
-                    echo '<span class="text-danger"> Not Synced (' . $nodeData['headers'] - $nodeData['blocks'] . ' behind)</span>';
+                    echo '<span class="text-danger"> Not Synced (' . $nodeData['headers'] - $nodeData['blocks'] . ' behind)</span></h2>';
                 }
                 
             }                
-            ?>            
-            </h2>
+            ?>           
+            
             <?php 
             if ($bitcoin->status != 200) {
             ?>
