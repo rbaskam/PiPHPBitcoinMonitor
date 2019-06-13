@@ -90,9 +90,9 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 
     if ($action == 'shutdownBitcoin') {
-        $message = $phpFunctions->shutDownBitcoin($bitcoin->status);
+        $message = $bitcoinRPC->stop();
     } else if ($action == 'shutdownPi') {
-        $message = $phpFunctions->shutDownPi();
+        $message = $phpFunctions->shutDownPi($bitcoin->status);
     } else if ($action == 'createAddress') {
         $bitcoinRPC->getnewaddress();
         //Get the wallet Recieve address
