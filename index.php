@@ -82,6 +82,9 @@ if ($walletLabel == '') {
     $walletLabel = $labelsAvailable[0];
 }
 
+echo $walletLabel;
+die();
+
 //Get the wallet Recieve address
 $walletAddressAndType = $bitcoinRPC->getaddressbylabel($walletLabel);
 
