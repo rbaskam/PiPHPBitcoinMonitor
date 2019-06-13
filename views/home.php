@@ -126,7 +126,13 @@
                         }                
                         ?>
                         </span>
-                        <span class="count-name">BTC Balance</span>
+                        <span class="count-name">BTC Balance<br>
+                        <?php
+                        if (isset($bitcoinRPC)) {
+                            echo $bitcoinRPC->getaccountaddress();
+                        } 
+                        ?>
+                        </span>
                     </div>
                 </div>
 
