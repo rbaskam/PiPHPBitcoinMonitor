@@ -55,36 +55,35 @@ if ($bitcoin->status == 200) {
 
     //get the information about the current Node
     $nodeData = $bitcoinRPC->getblockchaininfo();
+
+    //Get information about loaded wallet
+    $walletInfo = $bitcoinRPC->getwalletinfo();
+
+    //Get the debug logs for bitcoin
+    $bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
+
+
+    //Get information about addresses
+    $labelsAvailable = $bitcoinRPC->listlabels();
+
+    //Check if we have some labels (only way I can think of for now)
+    if (count($labelsAvailable) == 0) {
+        //Create a new address and label
+        $bitcoinRPC->getnewaddress();
+    }
+
+    //Now we have a label we can get a receieveing address
+    $labelsAvailable = $bitcoinRPC->listlabels();
+
+    //Get the label if set
+    $walletLabel = getenv('BTCWALLETLABEL');
+    if ($walletLabel == '') {
+        $walletLabel = $labelsAvailable[0];
+    }
+
+    //Get the wallet Recieve address
+    $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
 }
-
-//Get information about loaded wallet
-$walletInfo = $bitcoinRPC->getwalletinfo();
-
-//Get the debug logs for bitcoin
-$bitcoinLogs = $phpFunctions->getBitcoinDebugLog();
-
-
-//Get information about addresses
-$labelsAvailable = $bitcoinRPC->listlabels();
-
-//Check if we have some labels (only way I can think of for now)
-if (count($labelsAvailable) == 0) {
-    //Create a new address and label
-    $bitcoinRPC->getnewaddress();
-}
-
-//Now we have a label we can get a receieveing address
-$labelsAvailable = $bitcoinRPC->listlabels();
-
-//Get the label if set
-$walletLabel = getenv('BTCWALLETLABEL');
-if ($walletLabel == '') {
-    $walletLabel = $labelsAvailable[0];
-}
-
-
-//Get the wallet Recieve address
-$walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
 
 //Get Actions if applicable
 if (isset($_GET['action'])) {
