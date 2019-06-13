@@ -21,6 +21,18 @@
             <?php }
             ?>
             </h1>
+            <h2>Your Node is: 
+            <?php 
+            if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
+                if ($nodeData['blocks'] == $nodeData['headers']) {
+                    echo '<span class="text-success"> Synced</span>';
+                } else {
+                    echo '<span class="text-danger"> Not Synced (' . $nodeData['headers'] - $nodeData['blocks'] . ' behind)</span>';
+                }
+                
+            }                
+            ?>            
+            </h2>
             <?php 
             if ($bitcoin->status != 200) {
             ?>
