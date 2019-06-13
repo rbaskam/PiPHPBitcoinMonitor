@@ -31,7 +31,12 @@
   .card-counter.info{
     background-color: #26c6da;
     color: #FFF;
-  }  
+  } 
+  
+  .card-counter.warning{
+    background-color: ##ffbb33;
+    color: #FFF;
+  }
 
   .card-counter i{
     font-size: 5em;
