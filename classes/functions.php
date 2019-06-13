@@ -27,8 +27,11 @@ Class PHPFunctions
 
     
 
-    public function getBitcoinDebugLog($length = 10) 
+    public function getBitcoinDebugLog() 
     { 
+        //Get how many results you want
+        $lengthOfLog = getenv('BTCLOGLENGTH');
+
         //Get from ENV File
         $logFilePath   = dirname(__DIR__, 4) . getenv('BTCLOGFILE');
 
@@ -39,7 +42,7 @@ Class PHPFunctions
         $debugLog = array();
 
         //Loop through file lines
-        for ($i = max(0, count($file)-$length); $i < count($file); $i++) {
+        for ($i = max(0, count($file)-$lengthOfLog); $i < count($file); $i++) {
             array_push($debugLog, $file[$i]);
         }
 
