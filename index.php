@@ -71,6 +71,9 @@ if ($bitcoin->status == 200) {
     //Now we have a label we can get a receieveing address
     $labelsAvailable = $bitcoinRPC->listlabels();
 
+    //Now we have a label we can get a receieveing address
+    $connectionsAvailable = $bitcoinRPC->getconnectioncount();
+
     //Get the label if set
     $walletLabel = getenv('BTCWALLETLABEL');
     if ($walletLabel == '') {
