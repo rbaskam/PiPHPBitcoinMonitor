@@ -63,7 +63,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="card-counter primary">
                         <i class="fa fa-code-fork"></i>
                         <span class="count-numbers">
@@ -76,22 +76,8 @@
                         <span class="count-name">Synced Blocks/Headers</span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="card-counter primary">
-                        <i class="fab fa-connectdevelop"></i>
-                        <span class="count-numbers">
-                        <?php 
-                        if (isset($connectionsAvailable)) {
-                            echo $connectionsAvailable;
-                        }                
-                        ?>
-                        </span>
-                        <span class="count-name">Connections</span>
-                    </div>
-                </div>
-                
 
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="card-counter danger">
                         <i class="fa fa-percent"></i>
                         <span class="count-numbers">
@@ -106,7 +92,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card-counter warning">
                         <i class="fa fa-database"></i>
                         <span class="count-numbers">
@@ -120,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card-counter success">
                         <i class="fa fa-btc"></i>
                         <span class="count-numbers">
@@ -135,7 +121,23 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="card-counter purple">
+                        <i class="fa fa-btc"></i>
+                        <span class="fas fa-network-wired">
+                        <?php 
+                        if ($bitcoinRPC) {
+                            echo $bitcoinRPC->getconnectioncount();
+                        }                
+                        ?>
+                        </span>
+                        <span class="count-name">Connections<br>                       
+                        </span>
+                    </div>
+                </div>
+                
+
+                <div class="col-md-3">
                     <div class="card-counter info">
                         <i class="fa fas fa-link"></i>
                         <span class="count-numbers">

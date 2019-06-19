@@ -38,6 +38,11 @@
     color: #FFF;
   }
 
+  .card-counter.purple{
+    background-color: #665c84;
+    color: #FFF;
+  }
+
   .card-counter i{
     font-size: 5em;
     opacity: 0.2;
