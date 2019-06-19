@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-counter primary">
-                        <i class="fa fa-code-fork"></i>
+                        <i class="fas fa-cubes"></i>
                         <span class="count-numbers">
                         <?php 
                         if (isset($nodeData['blocks']) && isset($nodeData['headers'])) {
@@ -109,7 +109,7 @@
 
                 <div class="col-md-3">
                     <div class="card-counter success">
-                        <i class="fa fa-btc"></i>
+                        <i class="fab fa-btc"></i>
                         <span class="count-numbers">
                         <?php 
                         if ($bitcoinRPC) {
