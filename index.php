@@ -110,7 +110,7 @@ if (isset($_GET['action'])) {
         $autoRefresh = true;
 
         //Page to refresh
-        $page = $_SERVER['PHP_SELF'];
+        $page = $_SERVER['PHP_SELF'] . '?action=autoPageRefresh&every=' . $timeToWait;
         header("Refresh: $timeToWait; url=$page");
     }
 }
