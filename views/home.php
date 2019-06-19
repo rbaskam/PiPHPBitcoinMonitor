@@ -76,7 +76,7 @@
                         <span class="count-name">Synced Blocks/Headers</span>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-2">
                     <div class="card-counter primary">
                         <i class="fab fa-connectdevelop"></i>
                         <span class="count-numbers">
