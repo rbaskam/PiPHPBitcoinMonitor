@@ -5,6 +5,7 @@
         <?php
             require dirname(__DIR__, 1) . "/views/defaults/headTagContents.php";
         ?>
+    </head>
     <body>
         <?php
             require dirname(__DIR__, 1) . "/views/defaults/navigation.php";
