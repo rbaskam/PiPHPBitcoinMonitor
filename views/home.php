@@ -123,8 +123,8 @@
 
                 <div class="col-md-3">
                     <div class="card-counter purple">
-                        <i class="fa fa-btc"></i>
-                        <span class="fas fa-network-wired">
+                        <i class="fa-network-wired"></i>
+                        <span class="count-numbers">
                         <?php 
                         if ($bitcoinRPC) {
                             echo $bitcoinRPC->getconnectioncount();
