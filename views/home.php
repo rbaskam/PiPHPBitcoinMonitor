@@ -124,7 +124,7 @@
 
                 <div class="col-md-3">
                     <div class="card-counter purple">
-                        <i class="fa-network-wired"></i>
+                        <i class="fa fa-network-wired"></i>
                         <span class="count-numbers">
                         <?php 
                         if ($bitcoinRPC) {
