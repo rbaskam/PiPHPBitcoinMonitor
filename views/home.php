@@ -239,31 +239,6 @@
                 </tbody>
             </table>  
         </div>
-
-        <hr>
-        <div class="container">
-            <h2>Banned IP's</h2><br>
-            <p>Here are the IP's/Subnets Banned.</p>
-            
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>IP</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                foreach ($bannedIps AS $banList) {
-                ?>
-                    <tr>
-                        <td><?php echo $banList ?></td>
-                    </tr>
-                <?php
-                }
-                ?>
-                </tbody>
-            </table>  
-        </div>
         
         <?php
             require dirname(__DIR__, 1) . "/views/defaults/footer.php";
