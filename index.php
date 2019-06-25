@@ -79,6 +79,11 @@ if ($bitcoin->status == 200) {
 
     //Get the wallet Recieve address
     $walletAddressAndType = $bitcoinRPC->getaddressesbylabel($walletLabel);
+
+    //Now we have a label we can get a receieveing address
+    $bannedIps = $bitcoinRPC->listbanned();
+    var_dump($bannedIps);
+    die();
 }
 
 //Get the debug logs for bitcoin
