@@ -32,6 +32,8 @@ echo "<?php phpinfo ();?>" > /var/www/html/index.php
 cd /var/www
 rm -rf html
 git clone [INSERT CLONE HERE] html
+//Or for code safety use the latest release
+https://github.com/rbaskam/PiPHPBitcoinMonitor/releases
 ```
 
 Go to your php.ini file and remove the ; mark from the beginning of the following line:
